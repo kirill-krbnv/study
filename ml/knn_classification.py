@@ -38,11 +38,9 @@ class MyKNNClf:
 
 
     def predict(self, X_test: pd.DataFrame) -> pd.Series:
-        # переделать его так, чтобы он вовращал класс с наибольшим весом
         return (self.predict_proba(X_test) >= 0.5).astype(int)
 
     def predict_proba(self, X_test: pd.DataFrame) -> list:
-        # должен возвращать вес класса 1
         proba_list = []
 
         for idx, x_row in X_test.iterrows():
